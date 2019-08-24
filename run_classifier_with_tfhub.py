@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import os
 import optimization
-import run_classifier
+import run_classifier_transfer_learning
 import tokenization
 import tensorflow as tf
 import tensorflow_hub as hub
