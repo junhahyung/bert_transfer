@@ -775,9 +775,9 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
     tf.logging.info("trainable variables : %s" % tvars)
     """ remove final classification layer for transfer learning"""
     for var in tvars:
-        if "output_weights" in var:
+        if "output_weights" in var.name:
             tvars.remove(var)
-        elif "output_bias" in var:
+        elif "output_bias" in var.name:
             tvars.remove(var)
         else:
             pass
