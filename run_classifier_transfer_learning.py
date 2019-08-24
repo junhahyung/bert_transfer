@@ -772,6 +772,9 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
         num_labels, use_one_hot_embeddings)
 
     tvars = tf.trainable_variables()
+
+    # for debugging
+    print(tvars)
     tf.logging.info("trainable variables : %s" % tvars)
     """ remove final classification layer for transfer learning"""
     for var in tvars:
